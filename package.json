@@ -1,0 +1,55 @@
+{
+  "name": "electron-quick-start-typescript",
+  "version": "1.0.0",
+  "description": "A minimal Electron application written with Typescript",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron ./dist/main.js",
+    "doge": "npx electron-builder -c.extraMetadata.main=./dist/main.bundle.js  --linux deb"
+  },
+  "build": {
+    "productName": "Doge",
+    "appId": "todo.hoge.com",
+    "files": [
+      "dist/**"
+    ]
+  },
+  "repository": "https://github.com/electron/electron-quick-start-typescript",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "typescript"
+  ],
+  "author": {
+    "name": "doge",
+    "email": "wow"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "electron": "^9.3.1",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.1.0",
+    "eslint": "^7.3.1",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "ts-loader": "^8.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "styled-components": "^5.2.0"
+  }
+}
