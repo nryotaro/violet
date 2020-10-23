@@ -1,16 +1,18 @@
-import path from 'path'
-import CopyPlugin from 'copy-webpack-plugin'
-import webpack from 'webpack'
+const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
 
-export const main: webpack.Configuration = {
-    entry: 'src/main.ts',
+const main = {
+    entry: './src/main.ts',
     target: 'electron-main',
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
+                loader: 'ts-loader',
+                options: {
+                    configFile: 'tsconfig.dev.json'
+                },
             },
         ],
     },
@@ -23,7 +25,7 @@ export const main: webpack.Configuration = {
     },
 }
 
-export const renderer: webpack.Configuration = {
+const renderer = {
     entry: 'src/renderer.tsx',
     target: 'electron-renderer',
     module: {
@@ -54,3 +56,5 @@ export const renderer: webpack.Configuration = {
         })
     ]
 }
+
+module.exports = [main, renderer] 
