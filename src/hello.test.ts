@@ -11,7 +11,7 @@ class TestUtils {
         // start application
         this.app = new Application({
             // path to electron app
-            args: ["/home/ryotaro/work/kingyohime/dist/main.js"],
+            args: ["./dist/main.js"],
             //path: "" + electron,
             path: './node_modules/electron/dist/electron',
             startTimeout: 30000,
@@ -21,8 +21,11 @@ class TestUtils {
     }
 
     public tearDown() {
-        // close browser
-        //const windows = this.app.client.windowHandles() as any;
+        const windows = this.app.client.getWindowHandles();
+        this.app.client.closeWindow()
+        this.app.stop()
+        //return this.app.stop()
+        //return this.app.client.closeWindow()
         //this.app.client.close(windows.sessionId);
     }
 }
@@ -31,7 +34,8 @@ describe('add100', () => {
     it('should be 1 + 100 = 101', async () => {
         //const u = new TestUtils()
         console.log('#@@@@')
-        const a = new TestUtils().setUp()
-        await a
+        const app = new TestUtils()
+        await app.setUp()
+        await app.tearDown()
     });
 });
