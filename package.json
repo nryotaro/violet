@@ -19,15 +19,11 @@
   "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo",
     "typescript"
   ],
   "author": {
-    "name": "doge",
-    "email": "wow"
+    "name": "Nakamura, Ryotaro",
+    "email": "nakamura.ryotaro@ryotaro.dev"
   },
   "license": "CC0-1.0",
   "devDependencies": {

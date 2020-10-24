@@ -8,9 +8,9 @@
     "outDir": "dist",
     "jsx": "react",
     "baseUrl": ".",
-    "moduleResolution": "node",
-    "include": [
-      "src/**/*"
-    ]
-  }
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
