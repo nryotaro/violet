@@ -4,7 +4,6 @@ import webpack from 'webpack'
 
 const tsConfigPath = 'tsconfig.json'
 const developConfig: webpack.Configuration = {
-    watch: true,
     mode: "development",
     devtool: "inline-source-map"
 }

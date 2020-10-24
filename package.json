@@ -1,22 +1,23 @@
 {
-  "name": "electron-quick-start-typescript",
-  "version": "1.0.0",
-  "description": "A minimal Electron application written with Typescript",
+  "name": "kingyohime",
+  "version": "0.0.1",
+  "description": "A manga browser",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "dev": "webpack --watch --config webpack.config.dev.ts",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "npm run build && electron ./dist/main.js",
-    "doge": "npx electron-builder -c.extraMetadata.main=./dist/main.bundle.js  --linux deb"
+    "build": "npm run clean; webpack --config webpack.config.prod.ts",
+    "start": "electron ./dist/main.js",
+    "clean": "rm -rf ./dist",
+    "package": "npm run build && electron-builder -c.extraMetadata.main=./dist/main.js  --linux deb"
   },
   "build": {
-    "productName": "Doge",
-    "appId": "todo.hoge.com",
+    "productName": "Kingyohime",
+    "appId": "kingyohime.nryotaro.dev",
     "files": [
       "dist/**"
     ]
   },
-  "repository": "https://github.com/electron/electron-quick-start-typescript",
+  "repository": "https://github.com/nryotaro/kingyohime",
   "keywords": [
     "Electron",
     "typescript"
@@ -25,7 +26,7 @@
     "name": "Nakamura, Ryotaro",
     "email": "nakamura.ryotaro@ryotaro.dev"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "devDependencies": {
     "@types/copy-webpack-plugin": "^6.0.0",
     "@types/node": "^14.14.2",
@@ -42,6 +43,7 @@
     "eslint": "^7.3.1",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.1",
     "ts-loader": "^8.0.6",
     "ts-node": "^9.0.0",
     "typescript": "^3.9.7",
