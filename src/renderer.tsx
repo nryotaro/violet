@@ -11,10 +11,12 @@ import ReactDOM from 'react-dom'
 
 const App = () => {
     return (
-        <div>
-        foobar
-
-        </div>
+        <>
+            <nav>
+            </nav>
+            <div>
+            </div>
+        </>
     )
 }
 ReactDOM.render(
