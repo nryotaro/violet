@@ -1,3 +1,4 @@
+/** @jsx jsx */
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // No Node.js APIs are available in this process unless
@@ -7,16 +8,21 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import { css, jsx } from '@emotion/core'
+import { MdMenu } from "react-icons/md"
+const minNavigation = css`
+    background-color: pink;
+`
 
 const App = () => {
     return (
-        <>
-            <nav>
+        <div>
+            <nav css={minNavigation}>
+                <MdMenu/>
             </nav>
             <div>
             </div>
-        </>
+        </div>
     )
 }
 ReactDOM.render(
