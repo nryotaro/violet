@@ -53,6 +53,13 @@ export function createRendererConfig(configFile: string) {
                     test: /\.html$/,
                     loader: 'html-loader',
                 },
+                {
+                    test: /\.css$/,
+                    use: [
+                        "style-loader",
+                        "css-loader",
+                    ]
+                }
             ],
         },
         resolve,
@@ -64,6 +71,7 @@ export function createRendererConfig(configFile: string) {
             new CopyPlugin({
                 patterns: [
                     { from: 'src/index.html' },
+                    { from: 'src/styles.css' },
                 ]
             })
         ]
